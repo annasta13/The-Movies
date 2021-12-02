@@ -1,0 +1,20 @@
+CREATE TABLE favorite_entity(
+    movie_id INTEGER NOT NULL PRIMARY KEY,
+    poster_path TEXT NOT NULL,
+    overview TEXT NOT NULL,
+    release_date TEXT NOT NULL,
+    original_title TEXT NOT NULL
+);
+
+insertFavorite:
+INSERT OR REPLACE INTO favorite_entity(movie_id, poster_path, overview, release_date, original_title)
+VALUES(?,?,?,?,?);
+
+getAllFavorites:
+SELECT * FROM favorite_entity;
+
+getFavoriteById:
+SELECT * FROM favorite_entity WHERE movie_id = :movieId;
+
+deleteFavoriteMovie:
+DELETE FROM favorite_entity WHERE movie_id=:movieId;

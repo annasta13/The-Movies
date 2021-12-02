@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AppName">The Movies</string>
+    <string name="favourite_movie">Favourite Movie</string>
+</resources>
