@@ -1,5 +1,5 @@
 # The-Movies: Clean Architecture Kotlin Multiplatform Mobile
-<p>What's inside?
+<p>What're inside?
 <br>- Jetpack Compose
 <br>- Hilt
 <br>- Ktor
@@ -12,4 +12,3 @@
 <p>Android Preview</p>
 <p><img src="https://raw.githubusercontent.com/annasta13/The-Movies/main/The-Movie-Screenshot-Android.gif" width=30% height=30%></p>
 To run this project, set your API Key in the ApiKey.kt class in shared/commonMain/.../theMovie/util.
-
