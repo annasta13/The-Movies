@@ -1,4 +1,7 @@
-# The-Movies: Clean Architecture Kotlin Multiplatform Mobile
+The-Movies: Clean Architecture Kotlin Multiplatform Mobile
+==========
+[![build](https://github.com/annasta13/The-Movies/actions/workflows/gradle.yml/badge.svg)](https://github.com/annasta13/The-Movies/actions/workflows/gradle.yml)
+[![GitHub license](https://img.shields.io/github/license/annasta13/The-Movies.svg?style=plastic)](https://github.com/annasta13/The-Movies/blob/main/LICENSE)
 <p>What're inside?
 <br>- Jetpack Compose
 <br>- Hilt
