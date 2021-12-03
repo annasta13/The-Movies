@@ -5,7 +5,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.habileducation.themovie.android.ui.theme.Teal200
 
 private val LightColorPalette = lightColors(
@@ -25,7 +27,10 @@ fun LightTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = lightColors(),
+        colors = lightColors(
+            primary = Color.Black,
+            primaryVariant = Color.Black
+        ),
         typography = Typography,
         shapes = Shapes,
         content = content
@@ -46,6 +51,14 @@ fun DarkTheme(
 
 @Composable
 fun AppTheme(content: @Composable () -> Unit) {
-    return if (isSystemInDarkTheme()) DarkTheme(content = content)
+    val systemUiController = rememberSystemUiController()
+    val isDarkTheme = isSystemInDarkTheme()
+    SideEffect {
+        systemUiController.setNavigationBarColor(
+            color = Color.Black, //Your color
+            darkIcons = isDarkTheme
+        )
+    }
+    return if (isDarkTheme) DarkTheme(content = content)
     else LightTheme(content = content)
 }
