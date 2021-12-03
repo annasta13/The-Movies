@@ -50,7 +50,14 @@ struct MainScreen: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle("The Movies")
-            .ignoresSafeArea()
+            .navigationBarItems(trailing:
+                NavigationLink(destination: FavoriteScreen()){
+                    Image("favorited")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.white)
+                }.buttonStyle(PlainButtonStyle()))
         }.accentColor(.yellow)
     }
 }

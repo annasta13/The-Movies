@@ -15,25 +15,27 @@ struct MovieDetailScreen: View {
     
     init(movieId: Int64){
         self.movieId = movieId
-        viewModel.initState(movieId: movieId)
+        self.viewModel.initState(movieId: movieId)
     }
     
     var body: some View {
         let state = viewModel.state
         
         //NavigationView{
-            
-                if (state.isLoading){ ProgressView() }
-                
-                if (state.movieResponse != nil) {
-                    MovieDetailScreenContent(data: state.movieResponse!, onRefresh: {viewModel.initState(movieId: movieId)})
-                }
-                
-                if (state.error != nil){
-                    ErrorScreen(message: state.error!.message!){ viewModel.initState(movieId: movieId) }
-                }
-            
-            //.navigationBarTitleDisplayMode(.inline)
+        
+        if (state.isLoading){ ProgressView() }
+        
+        if (state.movieResponse != nil) {
+            MovieDetailScreenContent(data: state.movieResponse!, onRefresh: {viewModel.initState(movieId: movieId)}, isFavorited: state.isFavorited, onFavoriteClicked: {viewModel.setFavorite()})
+        }
+        
+        if (state.error != nil){
+            ErrorScreen(message: state.error!.message!){ viewModel.initState(movieId: movieId) }
+        }
+        
+    
+        //onAppear(perform: {viewModel.initState(movieId: movieId)})
+        //.navigationBarTitleDisplayMode(.inline)
         //}
     }
 }

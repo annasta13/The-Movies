@@ -9,8 +9,39 @@
 import SwiftUI
 
 struct FavoriteScreen: View {
+    @ObservedObject private var viewModel = FavouriteViewModel()
+    private let refreshName = "favoriteMovies"
+    
+    //    init(){
+    //            UINavigationBar.appearance().backgroundColor = UIColor(Color.black)
+    //            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    //            UINavigationBar.appearance().isTranslucent = false
+    //
+    //    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let state = viewModel.state
+        //NavigationView{
+        ScrollView(.vertical){
+            RefreshView(coordinateSpaceName: refreshName){viewModel.initState()}
+            
+            if (!state.movieResponse.isEmpty){
+                Spacer().padding(.top, 40)
+                MovieScreenContent(movieList: state.movieResponse)
+            }
+            else {
+                VStack{
+                    Text("No favourite movie yet")
+                }.frame(height: UIScreen.main.bounds.height)
+            }
+        }.coordinateSpace(name: refreshName)
+            .onAppear(perform: {
+                UIScrollView.appearance().backgroundColor = UIColor(.white)
+                viewModel.initState()
+            })
+            .navigationTitle("Favourite Movie")
+            .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

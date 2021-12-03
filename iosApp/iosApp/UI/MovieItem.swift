@@ -11,29 +11,29 @@ import shared
 
 struct MovieItem: View {
     var movie: Movie
-    @ObservedObject var imageLoader = ImageLoaderService()
-    @State var image: UIImage = UIImage()
+    @StateObject private var loader: ImageLoader
+    
+    init(movie: Movie){
+        self.movie = movie
+        _loader = StateObject(wrappedValue: ImageLoader(url: movie.poster.asUrl(), cache: Environment(\.imageCache).wrappedValue))
+    }
     
     var body: some View {
-        let defaultImage = UIImage(named: "default_image")
         
         ZStack{
             RoundedRectangle(cornerRadius: 5, style: .continuous).fill(Color.white).shadow(radius: 3)
             VStack(alignment: .leading, spacing: nil, content: {
                 HStack{
-                    Image(uiImage: image)
-                        .resizable()
-                        .clipped()
-                        .aspectRatio(contentMode: .fit)
-                        //.scaledToFill()
-                        .frame(width: 130, height: 130)
-                        .onReceive(imageLoader.$image) { image in
-                            if (image.isImage()) {self.image = image}
-                            else { self.image = defaultImage!}
-                        }
-                        .onAppear {
-                            imageLoader.loadImage(for: movie.poster)
-                        }
+                    
+                    if loader.image != nil {
+                        Image(uiImage: loader.image!).resizable().clipped()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 130, height: 130)
+                    } else {
+                        Image("default_image").resizable().clipped()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 130, height: 130)
+                    }
                     
                     VStack{
                         HStack{Text(movie.originalTitle).font(.body).bold()
@@ -46,7 +46,7 @@ struct MovieItem: View {
                     }.frame(height: 130)
                 }
             }).padding()
-        }
+        } .onAppear(perform: {loader.load()})
         ///zstack
         .padding(.horizontal)
     }

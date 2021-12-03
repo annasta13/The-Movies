@@ -13,8 +13,11 @@ import com.habileducation.themovie.useCase.fetchDetail.FetchDetail
 import com.habileducation.themovie.useCase.fetchDetail.FetchDetailImpl
 import com.habileducation.themovie.useCase.fetchMovies.FetchMovies
 import com.habileducation.themovie.useCase.fetchMovies.FetchMoviesImpl
+import com.habileducation.themovie.useCase.getFavoriteMovie.GetFavoriteMovie
+import com.habileducation.themovie.useCase.getFavoriteMovie.GetFavoriteMovieImpl
 import com.habileducation.themovie.useCase.insertFavorite.SetFavorite
 import com.habileducation.themovie.useCase.insertFavorite.SetFavoriteImpl
+import com.habileducation.themovie.viewModel.FavoriteMovieSharedViewModel
 import com.habileducation.themovie.viewModel.MovieDetailSharedViewModel
 import com.habileducation.themovie.viewModel.MovieSharedViewModel
 
@@ -41,6 +44,10 @@ class MovieModule {
         FetchMoviesImpl(movieRepository)
     }
 
+    private val getFavoriteMovie: GetFavoriteMovie by lazy {
+        GetFavoriteMovieImpl(movieRepository)
+    }
+
     private val fetchDetail: FetchDetail by lazy {
         FetchDetailImpl(movieRepository)
     }
@@ -55,6 +62,10 @@ class MovieModule {
 
     val movieSharedViewModel: MovieSharedViewModel by lazy {
         MovieSharedViewModel(fetchMovies)
+    }
+
+    val favoriteSharedViewModel: FavoriteMovieSharedViewModel by lazy {
+        FavoriteMovieSharedViewModel(getFavoriteMovie)
     }
 
     val movieDetailSharedViewModel: MovieDetailSharedViewModel by lazy {

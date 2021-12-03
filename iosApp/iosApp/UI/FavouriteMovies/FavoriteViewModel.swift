@@ -6,4 +6,16 @@
 //  Copyright © 2021 private project. All rights reserved.
 //
 
-import Foundation
+import shared
+
+class FavouriteViewModel: ObservableObject{
+    private let sharedViewModel = MovieModule().favoriteSharedViewModel
+    
+    @Published var state = FavoriteMovieViewState.companion.empty
+    
+    func initState(){
+        sharedViewModel.getFavoriteMovie(viewState: state).collectCommon(){ newState in
+            self.state = newState!
+        }
+    }
+}
