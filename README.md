@@ -5,6 +5,7 @@
 <br>- Ktor
 <br>- Android Instrument Test
 <br>- Unit Test
+<br>- SQLDelight
 </p>
 <p>iOS Preview</p>
 <p><img src="https://raw.githubusercontent.com/annasta13/The-Movies/main/The-Movie-Screenshot-iOS.gif" width=30% height=30%></p>
