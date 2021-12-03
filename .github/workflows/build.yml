@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: unit_test_report
-          path: app/shared/build/reports/tests/testDebugUnitTest/
+          path: app/shared/build/reports/tests/testDebugUnitTest/index.html
 
   instrumentation-test:
     needs: [ unit-test ]
