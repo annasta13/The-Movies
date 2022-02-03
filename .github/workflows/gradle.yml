@@ -29,6 +29,12 @@ jobs:
       uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
       with:
         arguments: build
+        
+  unit-test:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
     - name: Android Test Report
@@ -39,3 +45,36 @@ jobs:
       with:
         name: unit_test_report
         path: app/build/reports/tests/testDebugUnitTest/
+    - name: Upload test report
+      uses: actions/upload-artifact@v2
+      with:
+        name: unit_test_report
+        path: app/build/reports/tests/testDebugUnitTest/
+        
+  build-android-apk:
+    needs: [ unit-test ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Cache Gradle and wrapper
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: cache-${{ runner.os }}-${{ matrix.jdk }}-gradle-${{ hashFiles('*/.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Build Android APK
+        run: bash ./gradlew assembleDebug --stacktrace
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: android.applicationVariants.all { variant ->variant.outputs.all {outputFileName = "the singers-${variant.buildType.name}-${variant.versionName}.apk"}}
+          path: app/build/outputs/apk/debug
+
