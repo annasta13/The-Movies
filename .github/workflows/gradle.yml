@@ -76,5 +76,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: android.applicationVariants.all { variant ->variant.outputs.all {outputFileName = "the singers-${variant.buildType.name}-${variant.versionName}.apk"}}
-          path: app/build/outputs/apk/debug
+          path: app/build/outputs/apk/debug/debug-apk
 
