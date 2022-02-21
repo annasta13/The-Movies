@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.habileducation.themovie.viewModel.FavoriteMovieSharedViewModel
 import com.habileducation.themovie.viewState.FavoriteMovieViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
@@ -17,7 +18,10 @@ import javax.inject.Inject
  */
 
 @HiltViewModel
-class FavoriteMovieViewModel @Inject constructor(private val sharedViewModel: FavoriteMovieSharedViewModel) :
+class FavoriteMovieViewModel @Inject constructor(
+    private val sharedViewModel: FavoriteMovieSharedViewModel,
+    private val dispatcher: CoroutineDispatcher
+) :
     ViewModel() {
 
     var viewState = MutableStateFlow(FavoriteMovieViewState.empty)
@@ -27,7 +31,7 @@ class FavoriteMovieViewModel @Inject constructor(private val sharedViewModel: Fa
     }
 
     fun initState() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             sharedViewModel.getFavoriteMovie(viewState = viewState.value).collect {
                 viewState.value = it
             }

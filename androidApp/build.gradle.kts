@@ -120,9 +120,6 @@ android {
     }
     sourceSets {
         getByName("main") {
-            assets {
-                srcDirs("src/main/assets", "src/androidTest/assets")
-            }
             resources {
                 srcDirs("src/main/resources", "src/androidTest/resources")
             }

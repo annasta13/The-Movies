@@ -36,6 +36,12 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideCoroutineDispatcher(): CoroutineDispatcher {
+        return Dispatchers.IO
+    }
+
+    @Singleton
+    @Provides
     fun provideDatabase(context: App): AppDatabase {
         return AppDatabaseFactory(databaseFactory = DatabaseFactory(context)).createDatabase()
     }

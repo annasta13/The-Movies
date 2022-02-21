@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.habileducation.themovie.viewModel.MovieSharedViewModel
 import com.habileducation.themovie.viewState.MovieViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -17,7 +17,10 @@ import javax.inject.Inject
  */
 
 @HiltViewModel
-class PopularViewModel @Inject constructor(private val sharedViewModel: MovieSharedViewModel) :
+class PopularViewModel @Inject constructor(
+    private val sharedViewModel: MovieSharedViewModel,
+    private val dispatcher: CoroutineDispatcher
+) :
     ViewModel() {
 
     var viewState = MutableStateFlow(MovieViewState.empty)
@@ -27,7 +30,7 @@ class PopularViewModel @Inject constructor(private val sharedViewModel: MovieSha
     }
 
     fun initState() {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             sharedViewModel.fetchMovie(viewState = viewState.value, 1).collect {
                 viewState.value = it
             }
