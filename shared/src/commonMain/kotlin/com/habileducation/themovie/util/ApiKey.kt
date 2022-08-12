@@ -5,5 +5,5 @@ package com.habileducation.themovie.util
  *
  */
 class ApiKey {
-    val value = ""
+    val value = Secret.API_KEY
 }

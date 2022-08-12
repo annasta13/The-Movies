@@ -9,3 +9,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+com.habileducation.themovie.util.Secret.kt

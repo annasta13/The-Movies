@@ -1,5 +1,6 @@
 package com.habileducation.themovie.android.ui.components
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -25,7 +26,7 @@ fun ScreenContainer(
     trailingIcon: Int? = null,
     onLeadingIconClicked: (() -> Unit)? = null,
     onTrailingIconClicked: (() -> Unit)? = null,
-    content: @Composable () -> Unit,
+    content: @Composable (PaddingValues) -> Unit,
 ) {
     SwipeRefresh(
         state = SwipeRefreshState(loadingState),
@@ -34,9 +35,9 @@ fun ScreenContainer(
     ) {
         Scaffold(
             topBar = {
-                barTitle?.let {
+                barTitle?.let {title->
                     AppBar(
-                        barTitle = barTitle,
+                        barTitle = title,
                         appBarBackground = appBarBackground,
                         appBarContentColor = appBarContentColor,
                         leadingIcon = leadingIcon,
@@ -46,7 +47,7 @@ fun ScreenContainer(
                     )
                 }
             },
-            content = { content() }
+            content = { content(it) }
         )
     }
 }
