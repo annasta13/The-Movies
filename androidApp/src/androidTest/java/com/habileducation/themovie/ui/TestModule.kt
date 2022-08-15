@@ -4,6 +4,7 @@ import android.content.Context
 import com.habileducation.movie.data.source.AppDatabase
 import com.habileducation.themovie.android.di.AppModule
 import com.habileducation.themovie.android.di.MovieModule
+import com.habileducation.themovie.data.FakeRemoteDataSource
 import com.habileducation.themovie.data.factory.ApiService
 import com.habileducation.themovie.data.factory.AppDatabaseFactory
 import com.habileducation.themovie.data.factory.DatabaseFactory
@@ -22,10 +23,9 @@ import com.habileducation.themovie.useCase.getFavoriteMovie.GetFavoriteMovie
 import com.habileducation.themovie.useCase.getFavoriteMovie.GetFavoriteMovieImpl
 import com.habileducation.themovie.useCase.insertFavorite.SetFavorite
 import com.habileducation.themovie.useCase.insertFavorite.SetFavoriteImpl
-import com.habileducation.themovie.data.FakeRemoteDataSource
 import com.habileducation.themovie.viewModel.FavoriteMovieSharedViewModel
 import com.habileducation.themovie.viewModel.MovieDetailSharedViewModel
-import com.habileducation.themovie.viewModel.MovieSharedViewModel
+import com.habileducation.themovie.viewModel.MovieListSharedViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -139,8 +139,8 @@ object TestModule {
 
     @Singleton
     @Provides
-    fun provideMovieSharedViewModel(fetchMovies: FetchMovies): MovieSharedViewModel {
-        return MovieSharedViewModel(fetchMovies)
+    fun provideMovieListSharedViewModel(fetchMovies: FetchMovies): MovieListSharedViewModel {
+        return MovieListSharedViewModel(fetchMovies)
     }
 
     @Singleton

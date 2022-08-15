@@ -5,34 +5,23 @@ import com.habileducation.themovie.data.model.local.Movie
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-/**
- * Created by Annas Surdyanto on 13/11/21.
- *
- */
-
-data class MovieRemoteData(
-    val progress: LoadingProgress?,
-    val response: MovieResponse?
-) {
-    companion object {
-        val mocked = MovieRemoteData(null, MovieResponse.mocked)
-    }
-}
-
 @Serializable
 data class MovieResponse(
-    @SerialName(value = "results") val movieList: List<MovieData> = emptyList()
+    @SerialName(value = "results") val movieList: List<MovieData>?,
+    @SerialName(value = "page") val page: Int?,
+    @SerialName(value = "status_message") val message: String?,
+    @SerialName(value = "total_pages") val totalPages: Int?,
 ) {
     /**To help SwiftUI*/
     val movieDataList : List<Movie> get() = movieList.asDomainMovieList()
 
     companion object {
-        val mocked = MovieResponse(listOf(MovieData.mocked))
+        val mocked = MovieResponse(listOf(MovieData.mocked),1,null, 1)
     }
 }
 
-fun List<MovieData>.asDomainMovieList(): List<Movie>{
-    return map { it.asDomainModel() }
+fun List<MovieData>?.asDomainMovieList(): List<Movie>{
+    return this?.map { it.asDomainModel() }?: emptyList()
 }
 
 @Serializable
@@ -48,7 +37,7 @@ data class MovieData(
     }
 }
 
-/** Convert remote response to [Model] Domain objects*/
+/** Convert remote response to [Movie] Domain objects*/
 fun MovieData.asDomainModel(): Movie {
     return Movie(
         movieId = id,

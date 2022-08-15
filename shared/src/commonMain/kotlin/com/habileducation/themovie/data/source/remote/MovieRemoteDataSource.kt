@@ -9,6 +9,6 @@ import kotlinx.coroutines.flow.Flow
  *
  */
 interface MovieRemoteDataSource {
-    fun fetchMovies(movieType: String): Flow<kotlin.Result<MovieResponse>>
+    fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>>
     fun fetchMovieDetailAndReview(movieId: Long): Flow<Result<MovieDetailAndReview?>>
 }

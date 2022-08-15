@@ -6,7 +6,6 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.habileducation.themovie.android.MainActivity
 import com.habileducation.themovie.android.di.AppModule
 import com.habileducation.themovie.android.di.MovieModule
-import com.habileducation.themovie.android.ui.movieDetail.MovieDetailViewModel
 import com.habileducation.themovie.android.ui.navGraph.NavGraph
 import com.habileducation.themovie.android.util.TestTag
 import com.habileducation.themovie.data.model.local.Movie
@@ -15,14 +14,12 @@ import com.habileducation.themovie.data.FakeRemoteDataSource
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
-import id.co.vmk.loyal.android.theme.AppTheme
-import id.co.vmk.loyal.android.theme.LightTheme
+import com.habileducation.themovie.android.ui.theme.AppTheme
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import javax.inject.Inject
 
 /**
  * Created by Annas Surdyanto on 19/11/21.

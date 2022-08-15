@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
-import id.co.vmk.loyal.android.theme.keyLine3
+import com.habileducation.themovie.android.ui.theme.keyLine3
 
 /**
  * Created by Annas Surdyanto on 16/11/21.

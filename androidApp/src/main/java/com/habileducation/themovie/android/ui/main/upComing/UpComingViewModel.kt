@@ -2,14 +2,16 @@ package com.habileducation.themovie.android.ui.main.upComing
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.habileducation.themovie.viewModel.MovieSharedViewModel
-import com.habileducation.themovie.viewState.MovieViewState
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.habileducation.themovie.android.helper.MovieListPagingSource
+import com.habileducation.themovie.data.model.local.Movie
+import com.habileducation.themovie.viewModel.MovieListSharedViewModel
+import com.habileducation.themovie.viewModel.MovieType
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /**
@@ -19,22 +21,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UpComingViewModel @Inject constructor(
-    private val sharedViewModel: MovieSharedViewModel,
-    private val dispatcher: CoroutineDispatcher
-) :
-    ViewModel() {
-
-    var viewState = MutableStateFlow(MovieViewState.empty)
-
-    init {
-        initState()
-    }
-
-    fun initState() {
-        viewModelScope.launch(dispatcher) {
-            sharedViewModel.fetchMovie(viewState = viewState.value, 3).collect {
-                viewState.value = it
-            }
-        }
-    }
+    private val sharedViewModel: MovieListSharedViewModel
+) : ViewModel() {
+    var list: Flow<PagingData<Movie>> = Pager(PagingConfig(pageSize = 1)) {
+        MovieListPagingSource(
+            sharedViewModel,
+            MovieType.url(MovieType.UPCOMING_MOVIES)
+        )
+    }.flow.cachedIn(viewModelScope)
 }

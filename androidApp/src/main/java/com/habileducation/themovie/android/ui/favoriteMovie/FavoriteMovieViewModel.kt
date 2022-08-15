@@ -9,6 +9,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,9 +33,7 @@ class FavoriteMovieViewModel @Inject constructor(
 
     fun initState() {
         viewModelScope.launch(dispatcher) {
-            sharedViewModel.getFavoriteMovie(viewState = viewState.value).collect {
-                viewState.value = it
-            }
+            viewState.value = sharedViewModel.getFavoriteMovie(viewState = viewState.value).last()
         }
     }
 }

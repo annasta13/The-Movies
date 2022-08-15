@@ -1,4 +1,4 @@
-package com.habileducation.themovie.domain
+package com.habileducation.themovie.data.local
 
 import com.habileducation.themovie.data.model.local.Movie
 import com.habileducation.themovie.data.source.local.MovieLocalDataSource
@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.flow
  *
  */
 class FakeLocalDataSource(private val givenFavoriteMovie : List<Movie>? = null) : MovieLocalDataSource {
-    var movieInserted : Movie? = null
     var favoriteInserted : Movie? = null
     var movieDeleted : Long? = null
 
@@ -23,7 +22,7 @@ class FakeLocalDataSource(private val givenFavoriteMovie : List<Movie>? = null) 
     }
 
     override suspend fun isFavorited(movieId: Long): Boolean {
-        return false
+        return favoriteInserted?.movieId == movieId
     }
 
     override suspend fun deleteFavorite(movieId: Long) {
@@ -31,6 +30,8 @@ class FakeLocalDataSource(private val givenFavoriteMovie : List<Movie>? = null) 
     }
 
     override suspend fun setFavorite(movie: Movie): Boolean {
-        return false
+        if (!isFavorited(movie.movieId)) insertFavorite(movie)
+        else deleteFavorite(movie.movieId)
+        return isFavorited(movieId = movie.movieId)
     }
 }

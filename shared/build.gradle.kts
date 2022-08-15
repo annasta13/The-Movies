@@ -6,7 +6,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    kotlin("plugin.serialization") version "1.5.30"
+    kotlin("plugin.serialization") version "1.6.10"
     id("com.squareup.sqldelight")
     id("com.codingfeline.buildkonfig")
 }
@@ -14,9 +14,7 @@ plugins {
 version = "1.0"
 
 kotlin {
-    android(){
-
-    }
+    android()
 
     val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
         System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
@@ -30,7 +28,6 @@ kotlin {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
         ios.deploymentTarget = "14.1"
-        frameworkName = "shared"
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
@@ -44,7 +41,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:1.6.2")
                 implementation("io.ktor:ktor-client-serialization:1.6.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
-                implementation("org.jetbrains.kotlin:kotlin-serialization:1.5.30")
+                implementation("org.jetbrains.kotlin:kotlin-serialization:1.6.10")
                 implementation("io.ktor:ktor-client-mock:1.6.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
                 implementation("co.touchlab:stately-common:1.1.1")
@@ -56,7 +53,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation(kotlin("test-common"))
-                implementation("org.jetbrains.kotlin:kotlin-serialization:1.5.30")
+                implementation("org.jetbrains.kotlin:kotlin-serialization:1.6.10")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
                 implementation("io.ktor:ktor-client-mock:1.6.2")
                 implementation(kotlin("test-annotations-common"))
@@ -81,6 +78,10 @@ kotlin {
             }
         }
         val iosTest by getting
+
+        all {
+            languageSettings.optIn("-Xopt-in=kotlin.RequiresOptIn")
+        }
     }
 }
 
@@ -109,6 +110,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    sourceSets {
+        getByName("main") {
+            resources {
+                srcDirs("src/androidMain/resources", "src/test/resources")
+            }
+        }
+    }
 }
 
 buildkonfig {
@@ -130,5 +138,6 @@ sqldelight {
     database("AppDatabase") {
         packageName = "com.habileducation.movie.data.source"
         sourceFolders = listOf("sqldelight")
+        version = 1
     }
 }

@@ -33,8 +33,8 @@ import com.habileducation.themovie.android.R
 import com.habileducation.themovie.android.util.TestTag
 import com.habileducation.themovie.data.model.remote.MovieDetailAndReview
 import com.habileducation.themovie.data.model.remote.ReviewData
-import id.co.vmk.loyal.android.theme.keyLine2
-import id.co.vmk.loyal.android.theme.keyLine3
+import com.habileducation.themovie.android.ui.theme.keyLine2
+import com.habileducation.themovie.android.ui.theme.keyLine3
 import id.co.vmk.loyal.android.ui.ViewHelper.ImageViewerScreen
 
 /**

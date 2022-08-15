@@ -11,9 +11,9 @@ import kotlinx.coroutines.flow.Flow
  */
 
 interface MovieRepository {
-    fun fetchMovies(movieType: String): Flow<Result<MovieResponse>>
     fun fetchMovieDetail(movieId: Long): Flow<Result<MovieDetailAndReview?>>
     fun getFavoriteMovie(): Flow<List<Movie>>
     suspend fun isFavorited(movieId: Long): Boolean
     suspend fun setFavorite(movie: Movie): Boolean
+    fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>>
 }

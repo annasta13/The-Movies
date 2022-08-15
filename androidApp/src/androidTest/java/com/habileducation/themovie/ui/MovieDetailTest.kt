@@ -14,7 +14,7 @@ import com.habileducation.themovie.data.FakeRemoteDataSource
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
-import id.co.vmk.loyal.android.theme.LightTheme
+import com.habileducation.themovie.android.ui.theme.LightTheme
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Before

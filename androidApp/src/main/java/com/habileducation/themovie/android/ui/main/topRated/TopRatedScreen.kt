@@ -1,12 +1,15 @@
 package com.habileducation.themovie.android.ui.main.topRated
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.habileducation.themovie.android.ui.components.ErrorScreen
+import androidx.paging.LoadState
+import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.items
+import com.habileducation.themovie.android.ui.components.MovieItemView
+import com.habileducation.themovie.android.ui.components.PagingView
 import com.habileducation.themovie.android.ui.components.ScreenContainer
-import com.habileducation.themovie.android.ui.main.popular.MovieContentScreen
-import com.habileducation.themovie.data.model.remote.asDomainMovieList
+import com.habileducation.themovie.android.ui.theme.keyLine3
 
 /**
  * Created by Annas Surdyanto on 14/11/21.
@@ -18,21 +21,21 @@ fun TopRatedScreen(
     onMovieClicked: (movieId: Long) -> Unit,
     viewModel: TopRatedViewModel = hiltViewModel()
 ) {
-    val state = viewModel.viewState.collectAsState().value
+    val list = viewModel.list.collectAsLazyPagingItems()
+    val isLoading = list.loadState.refresh is LoadState.Loading
 
     ScreenContainer(
-        loadingState = state.isLoading,
-        onRefresh = viewModel::initState,
+        loadingState = isLoading,
+        onRefresh = list::refresh,
     ) {
-        state.movieResponse?.let {
-            MovieContentScreen(
-                movieList = it.movieList.asDomainMovieList(),
-                onMovieClicked = onMovieClicked
-            )
-        }
-        state.error?.let {
-            ErrorScreen(message = it.message.toString()) {
-                viewModel.initState()
+        PagingView(
+            list = list,
+            contentPadding = PaddingValues(keyLine3)
+        ) {
+            items(list) { item ->
+                item?.let {
+                    MovieItemView(onMovieClicked, it)
+                }
             }
         }
     }

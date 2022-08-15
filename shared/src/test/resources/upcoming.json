@@ -1,0 +1,413 @@
+{
+  "dates": {
+    "maximum": "2021-12-17",
+    "minimum": "2021-11-22"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/cinER0ESG0eJ49kXlExM0MEWGxW.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 566525,
+      "original_language": "en",
+      "original_title": "Shang-Chi and the Legend of the Ten Rings",
+      "overview": "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+      "popularity": 6665.737,
+      "poster_path": "/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg",
+      "release_date": "2021-09-01",
+      "title": "Shang-Chi and the Legend of the Ten Rings",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 3379
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/70nxSw3mFBsGmtkvcs91PbjerwD.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 580489,
+      "original_language": "en",
+      "original_title": "Venom: Let There Be Carnage",
+      "overview": "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
+      "popularity": 4141.331,
+      "poster_path": "/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
+      "release_date": "2021-09-30",
+      "title": "Venom: Let There Be Carnage",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 2039
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zBkHCpLmHjW2uVURs5uZkaVmgKR.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751
+      ],
+      "id": 585245,
+      "original_language": "en",
+      "original_title": "Clifford the Big Red Dog",
+      "overview": "As Emily struggles to fit in at home and at school, she discovers a small red puppy who is destined to become her best friend. When Clifford magically undergoes one heck of a growth spurt, becomes a gigantic dog and attracts the attention of a genetics company, Emily and her Uncle Casey have to fight the forces of greed as they go on the run across New York City. Along the way, Clifford affects the lives of everyone around him and teaches Emily and her uncle the true meaning of acceptance and unconditional love.",
+      "popularity": 3269.139,
+      "poster_path": "/tY5jylU5wWaqRs8fmwkJBNzoyXB.jpg",
+      "release_date": "2021-11-10",
+      "title": "Clifford the Big Red Dog",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 170
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg",
+      "genre_ids": [
+        12,
+        28,
+        53
+      ],
+      "id": 370172,
+      "original_language": "en",
+      "original_title": "No Time to Die",
+      "overview": "Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help. The mission to rescue a kidnapped scientist turns out to be far more treacherous than expected, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.",
+      "popularity": 3491.344,
+      "poster_path": "/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
+      "release_date": "2021-09-29",
+      "title": "No Time to Die",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 2033
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4gKxQIW91hOTELjY5lzjMbLoGxB.jpg",
+      "genre_ids": [
+        28,
+        53,
+        878
+      ],
+      "id": 763164,
+      "original_language": "en",
+      "original_title": "Apex",
+      "overview": "Ex-cop James Malone is serving a life sentence for a crime he didn’t commit. He is offered a chance at freedom if he can survive a deadly game of Apex, in which six hunters pay for the pleasure of hunting another human on a remote island. He accepts, and once he arrives, all hell breaks loose.",
+      "popularity": 1863.698,
+      "poster_path": "/chTkFGToW5bsyw3hgLAe4S5Gt3.jpg",
+      "release_date": "2021-11-12",
+      "title": "Apex",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 183
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vIPIyTJqcgOKgKcExCvTDpLpTYW.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 634649,
+      "original_language": "en",
+      "original_title": "Spider-Man: No Way Home",
+      "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a Super Hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+      "popularity": 1782.83,
+      "poster_path": "/5pVJ9SuuO72IgN6i9kMwQwnhGHG.jpg",
+      "release_date": "2021-12-15",
+      "title": "Spider-Man: No Way Home",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "id": 438631,
+      "original_language": "en",
+      "original_title": "Dune",
+      "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+      "popularity": 1485.963,
+      "poster_path": "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+      "release_date": "2021-09-15",
+      "title": "Dune",
+      "video": false,
+      "vote_average": 8,
+      "vote_count": 4179
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg",
+      "genre_ids": [
+        35,
+        28,
+        12,
+        878
+      ],
+      "id": 550988,
+      "original_language": "en",
+      "original_title": "Free Guy",
+      "overview": "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
+      "popularity": 1439.169,
+      "poster_path": "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+      "release_date": "2021-08-11",
+      "title": "Free Guy",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 3765
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hugKriLPeBm3lErSCQiFOgQzpkC.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "id": 574060,
+      "original_language": "en",
+      "original_title": "Gunpowder Milkshake",
+      "overview": "In her turbulent life as a professional assassin, Sam has no choice but to go rogue to save the life of an innocent 8-year-old girl in the middle of the gang war she has unleashed.",
+      "popularity": 749.184,
+      "poster_path": "/5AaKulwpUtkscAokKWtLenGTfVS.jpg",
+      "release_date": "2021-07-14",
+      "title": "Gunpowder Milkshake",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 382
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5i3ghCXVLNhewrBjTesMgy4FHT7.jpg",
+      "genre_ids": [
+        12,
+        16,
+        35,
+        10751,
+        14,
+        10402
+      ],
+      "id": 568124,
+      "original_language": "en",
+      "original_title": "Encanto",
+      "overview": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family with a unique gift from super strength to the power to heal—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
+      "popularity": 831.356,
+      "poster_path": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+      "release_date": "2021-11-24",
+      "title": "Encanto",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xPpXYnCWfjkt3zzE0dpCNME1pXF.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        14
+      ],
+      "id": 635302,
+      "original_language": "ja",
+      "original_title": "劇場版「鬼滅の刃」無限列車編",
+      "overview": "Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
+      "popularity": 742.851,
+      "poster_path": "/h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg",
+      "release_date": "2020-10-16",
+      "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+      "video": false,
+      "vote_average": 8.4,
+      "vote_count": 1868
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/c2cb0lLvbzvHlSUo35W8CfP0kYO.jpg",
+      "genre_ids": [
+        53
+      ],
+      "id": 714968,
+      "original_language": "en",
+      "original_title": "Plan A",
+      "overview": "Germany 1945, Max, a Jewish Holocaust survivor, meets a radical group of Jewish resistance fighters, who, like him, lost all hope for their future after they were robbed of their existence and their entire families were killed by the Nazis. They dream of retaliation on an epic scale for the Jewish people. An eye for an eye, a tooth for a tooth. Max starts identifying with the group's monstrous plans...",
+      "popularity": 591.753,
+      "poster_path": "/dfYOmisdbiVTXdcQji35pKywPFI.jpg",
+      "release_date": "2021-08-16",
+      "title": "Plan A",
+      "video": false,
+      "vote_average": 3.9,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jlGmlFOcfo8n5tURmhC7YVd4Iyy.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 436969,
+      "original_language": "en",
+      "original_title": "The Suicide Squad",
+      "overview": "Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle Reve prison join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused island of Corto Maltese.",
+      "popularity": 619.722,
+      "poster_path": "/kb4s0ML0iVZlG6wAKbbs9NAm6X.jpg",
+      "release_date": "2021-07-28",
+      "title": "The Suicide Squad",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 4827
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7WJjFviFBffEJvkAms4uWwbcVUk.jpg",
+      "genre_ids": [
+        12,
+        14,
+        35,
+        28
+      ],
+      "id": 451048,
+      "original_language": "en",
+      "original_title": "Jungle Cruise",
+      "overview": "Dr. Lily Houghton enlists the aid of wisecracking skipper Frank Wolff to take her down the Amazon in his dilapidated boat. Together, they search for an ancient tree that holds the power to heal – a discovery that will change the future of medicine.",
+      "popularity": 701.286,
+      "poster_path": "/9dKCd55IuTT5QRs989m9Qlb7d2B.jpg",
+      "release_date": "2021-07-28",
+      "title": "Jungle Cruise",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 3344
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qknLmBKDyjGMC40b7ZehqdfIi2A.jpg",
+      "genre_ids": [
+        35,
+        14
+      ],
+      "id": 425909,
+      "original_language": "en",
+      "original_title": "Ghostbusters: Afterlife",
+      "overview": "When a single mom and her two kids arrive in a small town, they begin to discover their connection to the original Ghostbusters and the secret legacy their grandfather left behind.",
+      "popularity": 672.799,
+      "poster_path": "/AndMDbKb5K3IyVzRVolkv6V1bya.jpg",
+      "release_date": "2021-11-11",
+      "title": "Ghostbusters: Afterlife",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 100
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w2jm8I0K83aZzHcI4Acl8DtuXCt.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        12,
+        35
+      ],
+      "id": 675445,
+      "original_language": "en",
+      "original_title": "PAW Patrol: The Movie",
+      "overview": "Ryder and the pups are called to Adventure City to stop Mayor Humdinger from turning the bustling metropolis into a state of chaos.",
+      "popularity": 574.913,
+      "poster_path": "/ic0intvXZSfBlYPIvWXpU1ivUCO.jpg",
+      "release_date": "2021-08-09",
+      "title": "PAW Patrol: The Movie",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 691
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8s4h9friP6Ci3adRGahHARVd76E.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "id": 379686,
+      "original_language": "en",
+      "original_title": "Space Jam: A New Legacy",
+      "overview": "When LeBron and his young son Dom are trapped in a digital space by a rogue A.I., LeBron must get them home safe by leading Bugs, Lola Bunny and the whole gang of notoriously undisciplined Looney Tunes to victory over the A.I.'s digitized champions on the court. It's Tunes versus Goons in the highest-stakes challenge of his life.",
+      "popularity": 554.364,
+      "poster_path": "/5bFK5d3mVTAvBCXi5NPWH0tYjKl.jpg",
+      "release_date": "2021-07-08",
+      "title": "Space Jam: A New Legacy",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 2605
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gxr3YtExqUPCJCj9GL1FXNcX9Fl.jpg",
+      "genre_ids": [
+        878,
+        53,
+        9648
+      ],
+      "id": 675319,
+      "original_language": "en",
+      "original_title": "Zone 414",
+      "overview": "In the near future on a colony of state-of-the-art robots, a private investigator is hired by the colony's creator to bring his missing daughter home.",
+      "popularity": 507.146,
+      "poster_path": "/wIm5S6Blkb0qDMTGVu80VWSrQV1.jpg",
+      "release_date": "2021-09-03",
+      "title": "Zone 414",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 94
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7z5MJGJ9CObnu770ZubDQye7DKD.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 760195,
+      "original_language": "en",
+      "original_title": "Separation",
+      "overview": "A young girl finds solace in her artist father and the ghost of her dead mother.",
+      "popularity": 412.263,
+      "poster_path": "/lHbSC2Np17CRsRXIbaE0YY1Hora.jpg",
+      "release_date": "2021-04-30",
+      "title": "Separation",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 82
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/70AV2Xx5FQYj20labp0EGdbjI6E.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "id": 637649,
+      "original_language": "en",
+      "original_title": "Wrath of Man",
+      "overview": "A cold and mysterious new security guard for a Los Angeles cash truck company surprises his co-workers when he unleashes precision skills during a heist. The crew is left wondering who he is and where he came from. Soon, the marksman's ultimate motive becomes clear as he takes dramatic and irrevocable steps to settle a score.",
+      "popularity": 433.646,
+      "poster_path": "/M7SUK85sKjaStg4TKhlAVyGlz3.jpg",
+      "release_date": "2021-04-22",
+      "title": "Wrath of Man",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 2670
+    }
+  ],
+  "total_pages": 33,
+  "total_results": 650
+}

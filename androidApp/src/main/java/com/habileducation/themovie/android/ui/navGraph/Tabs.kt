@@ -1,16 +1,18 @@
 package com.habileducation.themovie.android.ui.navGraph
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.habileducation.themovie.android.ui.main.TabItem
-import id.co.vmk.loyal.android.theme.keyLine2
+import com.habileducation.themovie.android.ui.theme.keyLine2
 import kotlinx.coroutines.launch
 
 /**
@@ -18,7 +20,7 @@ import kotlinx.coroutines.launch
  *
  */
 
-@OptIn(ExperimentalPagerApi::class, ExperimentalMaterialApi::class)
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Tabs(tabs: List<TabItem>, pagerState: PagerState) {
     val scope = rememberCoroutineScope()
@@ -33,20 +35,14 @@ fun Tabs(tabs: List<TabItem>, pagerState: PagerState) {
         }
     ) {
         tabs.forEachIndexed { index, tab ->
-            // LeadingIconTab() OR Tab()
-            /*LeadingIconTab(
-                icon = { Icon(painter = painterResource(id = tab.icon), contentDescription = "") },
-                text = { Text(tab.title) },
-                selected = pagerState.currentPage == index,
-                onClick = {
-                    scope.launch {
-                        pagerState.animateScrollToPage(index)
-                    }
-                },
-            )*/
             Tab(
                 selected = pagerState.currentPage == index,
-                content = { Text(text = tab.title, modifier = Modifier.padding(keyLine2)) },
+                content = {
+                    Text(
+                        text = stringResource(id = tab.title),
+                        modifier = Modifier.padding(keyLine2)
+                    )
+                },
                 onClick = {
                     scope.launch {
                         pagerState.animateScrollToPage(index)
@@ -63,8 +59,9 @@ fun TabsContent(
     tabs: List<TabItem>,
     pagerState: PagerState,
     onMovieClicked: (movieId: Long) -> Unit,
+    padding: PaddingValues
 ) {
-    HorizontalPager(state = pagerState, count = tabs.size) { page ->
+    HorizontalPager(contentPadding = padding, state = pagerState, count = tabs.size) { page ->
         tabs[page].screen(onMovieClicked = onMovieClicked)
     }
 }

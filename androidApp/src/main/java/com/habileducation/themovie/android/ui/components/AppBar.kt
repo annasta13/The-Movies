@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.habileducation.themovie.android.util.TestTag
-import id.co.vmk.loyal.android.theme.keyLine2
+import com.habileducation.themovie.android.ui.theme.keyLine2
 
 /**
  * Created by Annas Surdyanto on 01/10/21.

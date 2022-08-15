@@ -23,7 +23,7 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.habileducation.themovie.android.R
 import com.habileducation.themovie.android.ui.components.PrimaryButton
-import id.co.vmk.loyal.android.theme.keyLine3
+import com.habileducation.themovie.android.ui.theme.keyLine3
 
 /**
  * Created by Annas Surdyanto on 28/09/21.

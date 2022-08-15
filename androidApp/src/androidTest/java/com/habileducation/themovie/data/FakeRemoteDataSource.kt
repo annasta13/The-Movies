@@ -14,9 +14,8 @@ import kotlinx.coroutines.flow.flow
  *
  */
 class FakeRemoteDataSource : MovieRemoteDataSource {
-    override fun fetchMovies(movieType: String): Flow<Result<MovieResponse>> = flow {
-        val file = this::class.java.classLoader!!.getResourceAsStream(jsonFile(movieType)).bufferedReader().use { it.readText() }
-        emit(Result.success(file.asMovieResponse()))
+    override fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>> {
+        TODO("Not yet implemented")
     }
 
     override fun fetchMovieDetailAndReview(movieId: Long): Flow<Result<MovieDetailAndReview?>> =

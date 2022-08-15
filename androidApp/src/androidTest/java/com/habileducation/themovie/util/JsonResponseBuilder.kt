@@ -11,5 +11,4 @@ class JsonResponseBuilder {
     fun getJsonContent(fileName: String): String {
         return InputStreamReader(javaClass.classLoader!!.getResourceAsStream(fileName)).use { it.readText() }
     }
-
 }

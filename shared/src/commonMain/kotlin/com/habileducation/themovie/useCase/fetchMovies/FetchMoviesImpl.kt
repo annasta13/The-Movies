@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
  *
  */
 class FetchMoviesImpl(private val movieRepository: MovieRepository) : FetchMovies {
-    override fun invoke(movieType: String): Flow<Result<MovieResponse>> {
-        return movieRepository.fetchMovies(movieType)
+    override fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>> {
+        return movieRepository.loadMovie(url, page)
     }
 }

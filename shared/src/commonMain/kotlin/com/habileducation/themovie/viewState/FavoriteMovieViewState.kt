@@ -27,6 +27,6 @@ data class FavoriteMovieViewState(
     }
 }
 
-fun FavoriteMovieViewState.resetState(): FavoriteMovieViewState {
-    return this.copy(error = null)
+fun FavoriteMovieViewState.resetState(isLoading : Boolean = false): FavoriteMovieViewState {
+    return this.copy(error = null, isLoading = isLoading)
 }

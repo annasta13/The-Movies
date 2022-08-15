@@ -1,4 +1,4 @@
-package com.habileducation.themovie.domain
+package com.habileducation.themovie.data.remote
 
 import com.habileducation.themovie.AppKey
 import com.habileducation.themovie.data.model.remote.MovieDetailAndReview
@@ -20,15 +20,30 @@ import kotlinx.coroutines.flow.flow
  */
 class FakeRemoteDataSource : MovieRemoteDataSource {
     private val apiService = FakeApiService()
+    private var movieListResponse = ""
+    private var movieDetailResponse = ""
+    private var reviewResponse = ""
 
-    override fun fetchMovies(movieType: String): Flow<Result<MovieResponse>> = flow {
-        val api = apiService.buildApiService(movieType)
-        val response = api.get<MovieResponse>(urlString = "${AppKey.BASE_URL}$movieType") {
+    fun setMovieListResponse(fileName: String){
+        movieListResponse = fileName
+    }
+    fun setMovieDetailResponse(fileName: String){
+        movieDetailResponse = fileName
+    }
+
+    fun setReviewResponse(fileName: String){
+        reviewResponse = fileName
+    }
+
+    override fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>> = flow {
+        val api = apiService.buildApiService(url, movieListResponse)
+        val response = api.get<MovieResponse>(urlString = "${AppKey.BASE_URL}$url") {
             contentType(ContentType.Application.Json)
             parameter("api_key", ApiKey().value)
+            parameter("page", page)
         }
         emit(Result.success(response))
-    }.catch { e -> emit(Result.failure(exception = e)) }
+    }.catch { e -> emit(Result.failure(e)) }
 
     override fun fetchMovieDetailAndReview(movieId: Long): Flow<Result<MovieDetailAndReview>> =
         flow {
@@ -38,8 +53,8 @@ class FakeRemoteDataSource : MovieRemoteDataSource {
         }.catch { e -> emit(Result.failure(exception = e)) }
 
     private suspend fun fetchMovieDetail(movieId: Long): MovieDetailResponse? {
-        val mockedParam = if(movieId > 0L) "movieDetail" else null
-        val api = apiService.buildApiService(mockedParam!!)
+        val mockedParam = if (movieId > 0L) "movieDetail" else null
+        val api = apiService.buildApiService(mockedParam!!, movieDetailResponse)
         return api.get(urlString = AppKey.BASE_URL) {
             contentType(ContentType.Application.Json)
             parameter("api_key", ApiKey().value)
@@ -50,8 +65,8 @@ class FakeRemoteDataSource : MovieRemoteDataSource {
     }
 
     private suspend fun fetchMovieReview(movieId: Long): ReviewResponse? {
-        val mockedParam = if(movieId > 0L) "movieReview" else null
-        val api = apiService.buildApiService(mockedParam!!)
+        val mockedParam = if (movieId > 0L) "movieReview" else null
+        val api = apiService.buildApiService(mockedParam!!, reviewResponse)
         return api.get(urlString = AppKey.BASE_URL) {
             contentType(ContentType.Application.Json)
             parameter("api_key", ApiKey().value)

@@ -8,5 +8,5 @@ import kotlinx.coroutines.flow.Flow
  *
  */
 interface FetchMovies {
-    operator fun invoke(movieType: String): Flow<Result<MovieResponse>>
+    fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>>
 }

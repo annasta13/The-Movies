@@ -2,4 +2,13 @@
 <resources>
     <string name="AppName">The Movies</string>
     <string name="favourite_movie">Favourite Movie</string>
+    <string name="retry">Retry</string>
+    <string name="error_title">Oups.. Sorry</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="popular">Popular</string>
+    <string name="playing">Playing</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="top_rated">Top Rated</string>
 </resources>

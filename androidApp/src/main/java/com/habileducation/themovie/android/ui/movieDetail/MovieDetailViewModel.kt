@@ -8,6 +8,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,15 +27,13 @@ class MovieDetailViewModel @Inject constructor(
 
     fun initState(movieId: Long) {
         viewModelScope.launch(dispatcher) {
-            detailViewModel.fetchDetail(viewState = state.value, movieId).collect {
-                state.value = it
-            }
+            state.value = detailViewModel.fetchDetail(viewState = state.value, movieId).last()
         }
     }
 
     fun setFavorite() {
         viewModelScope.launch(dispatcher) {
-            detailViewModel.setFavorite(viewState = state.value).collect {
+            detailViewModel.setFavorite(viewState = state.value).collectLatest {
                 state.value = it
             }
         }

@@ -18,10 +18,6 @@ class MovieRepositoryImpl(
     private val localDataSource: MovieLocalDataSource,
     private val remoteDataSource: MovieRemoteDataSource
 ) : MovieRepository {
-    override fun fetchMovies(movieType: String): Flow<Result<MovieResponse>> {
-        return remoteDataSource.fetchMovies(movieType)
-    }
-
     override fun fetchMovieDetail(movieId: Long): Flow<Result<MovieDetailAndReview?>> {
         return remoteDataSource.fetchMovieDetailAndReview(movieId)
     }
@@ -36,5 +32,9 @@ class MovieRepositoryImpl(
 
     override suspend fun setFavorite(movie: Movie): Boolean {
         return localDataSource.setFavorite(movie)
+    }
+
+    override fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>> {
+        return remoteDataSource.loadMovie(url, page)
     }
 }

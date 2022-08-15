@@ -19,11 +19,12 @@ import kotlinx.coroutines.flow.flow
  */
 
 class MovieRemoteDataSourceImpl(private val apiService: HttpClient) : MovieRemoteDataSource {
-    override fun fetchMovies(movieType: String): Flow<Result<MovieResponse>> = flow {
+    override fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>> = flow {
         val response =
-            apiService.get<MovieResponse>(urlString = "${AppKey.BASE_URL}$movieType") {
+            apiService.get<MovieResponse>(urlString = "${AppKey.BASE_URL}$url") {
                 contentType(ContentType.Application.Json)
                 parameter("api_key", ApiKey().value)
+                parameter("page", page)
             }
         emit(Result.success(response))
     }.catch { e -> emit(Result.failure(e)) }

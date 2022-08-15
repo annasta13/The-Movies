@@ -1,21 +1,11 @@
-package id.co.vmk.loyal.android.theme
+package com.habileducation.themovie.android.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-
-/*private val Montserrat = FontFamily(
-    Font(R.font.montserrat_regular),
-    Font(R.font.montserrat_medium, FontWeight.W500),
-    Font(R.font.montserrat_semibold, FontWeight.W600)
-)*/
-
 val Typography = Typography(
-
-    //defaultFontFamily = Montserrat,
-
     h4 = TextStyle(
         fontWeight = FontWeight.SemiBold,
         fontSize = 30.sp,

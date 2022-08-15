@@ -1,4 +1,4 @@
-package id.co.vmk.loyal.android.theme
+package com.habileducation.themovie.android.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

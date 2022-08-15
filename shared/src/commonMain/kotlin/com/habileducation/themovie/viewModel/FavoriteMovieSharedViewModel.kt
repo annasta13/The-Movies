@@ -14,8 +14,8 @@ import kotlinx.coroutines.flow.flow
 class FavoriteMovieSharedViewModel(private val getFavoriteMovie: GetFavoriteMovie) {
 
     fun getFavoriteMovie(viewState: FavoriteMovieViewState) = flow {
-        val newState = viewState.resetState()
-        emit(newState.copy(isLoading = true))
+        val newState = viewState.resetState(true)
+        emit(newState)
         getFavoriteMovie.invoke().collect {
             val stateToEmit = newState.copy(
                 isLoading = false,

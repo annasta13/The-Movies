@@ -1,6 +1,5 @@
 package com.habileducation.themovie.di
 
-import com.habileducation.movie.data.source.AppDatabase
 import com.habileducation.themovie.data.repo.MovieRepository
 import com.habileducation.themovie.data.repo.MovieRepositoryImpl
 import com.habileducation.themovie.data.source.local.MovieLocalDataSource
@@ -19,7 +18,7 @@ import com.habileducation.themovie.useCase.insertFavorite.SetFavorite
 import com.habileducation.themovie.useCase.insertFavorite.SetFavoriteImpl
 import com.habileducation.themovie.viewModel.FavoriteMovieSharedViewModel
 import com.habileducation.themovie.viewModel.MovieDetailSharedViewModel
-import com.habileducation.themovie.viewModel.MovieSharedViewModel
+import com.habileducation.themovie.viewModel.MovieListSharedViewModel
 
 /**
  * Created by Annas Surdyanto on 29/11/21.
@@ -60,8 +59,8 @@ class MovieModule {
         SetFavoriteImpl(movieRepository)
     }
 
-    val movieSharedViewModel: MovieSharedViewModel by lazy {
-        MovieSharedViewModel(fetchMovies)
+    val movieSharedViewModel: MovieListSharedViewModel by lazy {
+        MovieListSharedViewModel(fetchMovies)
     }
 
     val favoriteSharedViewModel: FavoriteMovieSharedViewModel by lazy {

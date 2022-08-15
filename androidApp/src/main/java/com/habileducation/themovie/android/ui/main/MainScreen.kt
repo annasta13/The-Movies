@@ -33,10 +33,10 @@ fun MainScreen(onMovieClicked: (movieId: Long) -> Unit, onNavigateToFavorite: ()
                 onTrailingIconClicked = onNavigateToFavorite
             )
         }
-    ) {
+    ) {padding->
         Column {
             Tabs(tabs = tabs, pagerState = pagerState)
-            TabsContent(tabs = tabs, pagerState = pagerState, onMovieClicked = onMovieClicked)
+            TabsContent(tabs = tabs, pagerState = pagerState, onMovieClicked = onMovieClicked, padding = padding)
         }
     }
 }

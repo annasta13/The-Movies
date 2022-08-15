@@ -1,4 +1,4 @@
-package id.co.vmk.loyal.android.theme
+package com.habileducation.themovie.android.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.habileducation.themovie.android.ui.theme.Teal200
 
 private val LightColorPalette = lightColors(
     primary = Color.Gray,

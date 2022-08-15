@@ -44,7 +44,7 @@ fun LoadingScreen() {
 @OptIn(ExperimentalCoilApi::class)
 @Composable
 fun LoadingIconScreen(modifier: Modifier = Modifier) {
-    CircularProgressIndicator()
+    CircularProgressIndicator(modifier = modifier)
 }
 
 
