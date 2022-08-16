@@ -27,7 +27,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-swiperefresh:0.19.0")
     implementation("com.google.accompanist:accompanist-placeholder-material:0.19.0")
     //UI Systemcolor
-    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.21.4-beta")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.21.4-beta")
 
     implementation("androidx.test:core:1.4.0")
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
@@ -47,7 +47,7 @@ dependencies {
     testImplementation("androidx.arch.core:core-testing:2.1.0")
     testImplementation("androidx.test:core:1.4.0")
 
-    androidTestImplementation ("org.mockito:mockito-android:4.1.0")
+    androidTestImplementation("org.mockito:mockito-android:4.1.0")
     //testImplementation ("org.mockito:mockito-inline:2.13.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test.ext:junit:1.1.3")
@@ -59,6 +59,7 @@ dependencies {
     testImplementation("org.robolectric:robolectric:4.6.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.1")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1-native-mt")
 
     //testImplementation("com.google.truth:truth:1.1.3")
     testImplementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.2")

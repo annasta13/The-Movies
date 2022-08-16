@@ -8,19 +8,10 @@ import io.ktor.http.*
 import io.ktor.utils.io.*
 import kotlinx.serialization.ExperimentalSerializationApi
 
-
-/*internal fun buildOkHttpClient(): HttpClient {
-
-    return OkHttpClient.Builder()
-        .connectTimeout(1, TimeUnit.SECONDS)
-        .readTimeout(1, TimeUnit.SECONDS)
-        .writeTimeout(1, TimeUnit.SECONDS)
-        .build()
-}*/
-
+@Suppress("OPT_IN_IS_NOT_ENABLED")
 @OptIn(ExperimentalSerializationApi::class)
 class FakeApiService() {
-    fun buildApiService(movieType: String, respondFileName: String): HttpClient {
+    fun buildApiService(respondFileName: String): HttpClient {
         val response = FileReader().readFile(respondFileName)
         val mockEngine = MockEngine {
             if (respondFileName != "") {

@@ -32,7 +32,6 @@ class MainScreenTest {
 
     @get:Rule
     val hiltRule = HiltAndroidRule(this)
-    val movieDetailResponseMocked = FakeRemoteDataSource().fetchMovieDetailAndReview(19404)
     lateinit var movie: Movie
 
     @get:Rule
@@ -43,7 +42,8 @@ class MainScreenTest {
     @Before
     fun setUp() {
         runBlocking {
-            movie = movieDetailResponseMocked.first().getOrNull()!!.movieDetail!!.asDomainMovie()
+            val movieDetailResponseMocked = FakeRemoteDataSource().fetchMovieDetailAndReview(19404)
+            movie = movieDetailResponseMocked.movieDetail!!.asDomainMovie()
         }
         setContent()
     }

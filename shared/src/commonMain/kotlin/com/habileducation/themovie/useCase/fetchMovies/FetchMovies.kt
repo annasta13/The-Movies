@@ -1,6 +1,7 @@
 package com.habileducation.themovie.useCase.fetchMovies
 
-import com.habileducation.themovie.data.model.remote.MovieResponse
+import com.habileducation.themovie.data.model.local.MovieResponse
+import com.habileducation.themovie.data.model.remote.MovieResponseDto
 import kotlinx.coroutines.flow.Flow
 
 /**

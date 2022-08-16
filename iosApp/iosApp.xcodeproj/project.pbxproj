@@ -33,6 +33,7 @@
 		8B15CFBE2755D715009A09AE /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15CFBD2755D715009A09AE /* FavoriteViewModel.swift */; };
 		8B15CFC02755D725009A09AE /* FavoriteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15CFBF2755D725009A09AE /* FavoriteScreen.swift */; };
 		8B15CFC22755E488009A09AE /* MovieDetailScreenContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15CFC12755E487009A09AE /* MovieDetailScreenContent.swift */; };
+		8B98DC0C28AB330800270739 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98DC0B28AB330800270739 /* LoadingScreen.swift */; };
 		9BCED7509BA2A7874213A4E0 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F277C63B0CDDD568B5D371 /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		8B15CFBD2755D715009A09AE /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		8B15CFBF2755D725009A09AE /* FavoriteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreen.swift; sourceTree = "<group>"; };
 		8B15CFC12755E487009A09AE /* MovieDetailScreenContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenContent.swift; sourceTree = "<group>"; };
+		8B98DC0B28AB330800270739 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		E0715FC257513AD257E95BF3 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F277C63B0CDDD568B5D371 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,6 +196,7 @@
 				8B15CFA527553419009A09AE /* PrimaryButton.swift */,
 				8B15CFA72755342A009A09AE /* SecondaryButton.swift */,
 				8B15CFB32755D0FD009A09AE /* ImageLoaderService.swift */,
+				8B98DC0B28AB330800270739 /* LoadingScreen.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8B15CFAA275535E3009A09AE /* MovieScreenContent.swift in Sources */,
 				8B15CFBE2755D715009A09AE /* FavoriteViewModel.swift in Sources */,
 				8B15CFB62755D6B7009A09AE /* TopRatedViewModel.swift in Sources */,
+				8B98DC0C28AB330800270739 /* LoadingScreen.swift in Sources */,
 				8B15CFAE275538D6009A09AE /* MovieItem.swift in Sources */,
 				8B15CFBC2755D6FF009A09AE /* MovieDetailViewModel.swift in Sources */,
 				8B15CF962754CC77009A09AE /* TopRatedMoviesScreen.swift in Sources */,

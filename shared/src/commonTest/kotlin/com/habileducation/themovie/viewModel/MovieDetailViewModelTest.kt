@@ -40,7 +40,6 @@ class MovieDetailViewModelTest {
             assertNotNull(response.movieDetail) {movie->
                 assertTrue(movie.id == 19404L)
                 val favouriteResult = sharedViewModel.setFavorite(result).last()
-                println("check result favourite $favouriteResult")
                 assertTrue(favouriteResult.isFavorited)
             }
             assertNotNull(response.review){reviewResponse ->

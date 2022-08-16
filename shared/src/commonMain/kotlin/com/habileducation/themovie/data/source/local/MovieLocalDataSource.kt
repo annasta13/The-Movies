@@ -1,7 +1,6 @@
 package com.habileducation.themovie.data.source.local
 
 import com.habileducation.themovie.data.model.local.Movie
-import com.habileducation.themovie.data.model.remote.MovieData
 import kotlinx.coroutines.flow.Flow
 
 /**

@@ -1,7 +1,7 @@
 package com.habileducation.themovie.data.source.remote
 
 import com.habileducation.themovie.data.model.remote.MovieDetailAndReview
-import com.habileducation.themovie.data.model.remote.MovieResponse
+import com.habileducation.themovie.data.model.remote.MovieResponseDto
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -9,6 +9,6 @@ import kotlinx.coroutines.flow.Flow
  *
  */
 interface MovieRemoteDataSource {
-    fun loadMovie(url: String, page: Int): Flow<Result<MovieResponse>>
-    fun fetchMovieDetailAndReview(movieId: Long): Flow<Result<MovieDetailAndReview?>>
+    suspend fun loadMovie(url: String, page: Int): MovieResponseDto
+    suspend fun fetchMovieDetailAndReview(movieId: Long): MovieDetailAndReview
 }

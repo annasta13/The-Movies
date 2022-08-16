@@ -1,6 +1,6 @@
 package com.habileducation.themovie.data.model.local
 
-import com.habileducation.themovie.data.model.remote.MovieData
+import com.habileducation.themovie.data.model.remote.MovieDataDto
 import com.habileducation.themovie.data.model.remote.asDomainModel
 
 /**
@@ -16,6 +16,6 @@ data class Movie(
 ) {
     val poster = "https://image.tmdb.org/t/p/w300/$posterPath"
     companion object {
-        val mocked = MovieData.mocked.asDomainModel()
+        val mocked = MovieDataDto.mocked.asDomainModel()
     }
 }

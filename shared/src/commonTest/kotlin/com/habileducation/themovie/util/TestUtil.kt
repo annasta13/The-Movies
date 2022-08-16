@@ -1,7 +1,5 @@
 package com.habileducation.themovie.util
 
-import com.habileducation.themovie.data.model.remote.MovieResponse
-import io.ktor.http.ContentType.Application.Json
 import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.CoroutineContext
 

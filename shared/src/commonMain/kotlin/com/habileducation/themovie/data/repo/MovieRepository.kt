@@ -1,8 +1,9 @@
 package com.habileducation.themovie.data.repo
 
 import com.habileducation.themovie.data.model.local.Movie
+import com.habileducation.themovie.data.model.local.MovieResponse
 import com.habileducation.themovie.data.model.remote.MovieDetailAndReview
-import com.habileducation.themovie.data.model.remote.MovieResponse
+import com.habileducation.themovie.data.model.remote.MovieResponseDto
 import kotlinx.coroutines.flow.Flow
 
 /**

@@ -14,19 +14,16 @@ struct UpcomingMoviesScreen: View {
     private let refreshName = "upcomingMovies"
     
     var body: some View {
-        let state = viewModel.state
         ScrollView(.vertical){
-                RefreshView(coordinateSpaceName: refreshName){viewModel.initState()}
-                if(state.error != nil){
-                    ErrorScreen(message: state.error!.message!){viewModel.initState()}
-                }
-                if(state.movieResponse != nil){
-                    MovieScreenContent(movieList: state.movieResponse!.movieDataList).padding(.top,8)
-                }
-            }.coordinateSpace(name: refreshName)
-            .onAppear(perform: {
-                UIScrollView.appearance().backgroundColor = UIColor(.white)
-            })
+            RefreshView(coordinateSpaceName: refreshName){viewModel.initState()}
+            MovieScreenContent(
+                movieList: viewModel.data,
+                errorMessage: viewModel.errorMessage,
+                isLoading: viewModel.loadingPage,
+                listIsFull: viewModel.listIsFull,
+                onRefresh: {viewModel.initState()}
+            )
+        }.coordinateSpace(name: refreshName)
     }
 }
 

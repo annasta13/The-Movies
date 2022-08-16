@@ -1,6 +1,6 @@
 package com.habileducation.themovie.viewState
 
-import com.habileducation.themovie.data.model.remote.MovieResponse
+import com.habileducation.themovie.data.model.local.MovieResponse
 
 /**
  * Created by Annas Surdyanto on 14/11/21.

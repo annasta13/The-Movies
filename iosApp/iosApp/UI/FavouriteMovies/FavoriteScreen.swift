@@ -12,13 +12,6 @@ struct FavoriteScreen: View {
     @ObservedObject private var viewModel = FavouriteViewModel()
     private let refreshName = "favoriteMovies"
     
-    //    init(){
-    //            UINavigationBar.appearance().backgroundColor = UIColor(Color.black)
-    //            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-    //            UINavigationBar.appearance().isTranslucent = false
-    //
-    //    }
-    
     var body: some View {
         let state = viewModel.state
         //NavigationView{
@@ -27,7 +20,11 @@ struct FavoriteScreen: View {
             
             if (!state.movieResponse.isEmpty){
                 Spacer().padding(.top, 40)
-                MovieScreenContent(movieList: state.movieResponse)
+                ForEach(state.movieResponse, id: \.movieId){movie in
+                    NavigationLink(destination: MovieDetailScreen(movieId: movie.movieId)){
+                        MovieItem(movie: movie)
+                    }.buttonStyle(PlainButtonStyle())
+                }
             }
             else {
                 VStack{
@@ -35,10 +32,7 @@ struct FavoriteScreen: View {
                 }.frame(height: UIScreen.main.bounds.height)
             }
         }.coordinateSpace(name: refreshName)
-            .onAppear(perform: {
-                UIScrollView.appearance().backgroundColor = UIColor(.white)
-                viewModel.initState()
-            })
+            .onAppear{viewModel.initState()}
             .navigationTitle("Favourite Movie")
             .navigationBarTitleDisplayMode(.inline)
         

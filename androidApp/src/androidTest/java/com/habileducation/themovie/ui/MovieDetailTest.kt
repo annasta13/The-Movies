@@ -32,7 +32,6 @@ import org.junit.Test
 @HiltAndroidTest
 class MovieDetailTest {
     val millis = 100L
-    val movieDetailResponseMocked = FakeRemoteDataSource().fetchMovieDetailAndReview(19404)
     lateinit var movie: Movie
 
     @get:Rule
@@ -43,7 +42,10 @@ class MovieDetailTest {
 
     @Before
     fun setUp() {
-        runBlocking { movie = movieDetailResponseMocked.first().getOrNull()!!.movieDetail!!.asDomainMovie() }
+        runBlocking {
+            val movieDetailResponseMocked = FakeRemoteDataSource().fetchMovieDetailAndReview(19404)
+            movie = movieDetailResponseMocked.movieDetail!!.asDomainMovie()
+        }
         composeRule.setContent {
             LightTheme {
                 MovieDetailScreen(movie.movieId)

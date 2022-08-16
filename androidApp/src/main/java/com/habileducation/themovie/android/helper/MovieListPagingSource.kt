@@ -26,7 +26,7 @@ class MovieListPagingSource(
         val result = sharedViewModel.loadMovie(page = params.key ?: 1, url = url).last()
         val currentPage = result.movieResponse?.page ?: 1
         val pageSize = result.movieResponse?.totalPages ?: 1
-        val list = result.movieResponse?.movieList.asDomainMovieList()
+        val list = result.movieResponse?.movieList?: emptyList()
         return PagingHelper.getReturn(
             throwable = result.error,
             list = list,
