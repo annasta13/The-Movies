@@ -7,6 +7,7 @@ The-Movies: Clean Architecture Kotlin Multiplatform Mobile
 <br>- Hilt
 <br>- Ktor
 <br>- Android Instrument Test
+<br>- Pagination
 <br>- Unit Test
 <br>- SQLDelight
 </p>
