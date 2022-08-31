@@ -14,7 +14,7 @@ The-Movies: Clean Architecture Kotlin Multiplatform Mobile
 
 ## Project-Related Articles
 - [Initial-Impresion][3] - Kotlin Multiplatform Mobile: The Definitive Cross-platform Bridge
-- Pagination - Pagination in Kotlin Multiplatform Mobile (proccessing)
+- [Pagination][4] - Pagination in Kotlin Multiplatform Mobile
 
 ## iOS Preview
 <p><img src="https://raw.githubusercontent.com/annasta13/The-Movies/main/The-Movie-Screenshot-iOS.gif" width=30% height=30%></p>
@@ -30,3 +30,4 @@ The-Movies: Clean Architecture Kotlin Multiplatform Mobile
 [1]: https://www.themoviedb.org/documentation/api
 [2]: https://github.com/yshrsmz/BuildKonfig
 [3]: https://betterprogramming.pub/kotlin-multiplatform-mobile-is-it-a-comfortable-bridge-fb724a9f3a0c
+[4]: https://betterprogramming.pub/pagination-in-kotlin-multiplatform-mobile-a96f21e71668?source=your_stories_page-------------------------------------
