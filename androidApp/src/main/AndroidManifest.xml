@@ -7,7 +7,7 @@
         android:name="com.habileducation.themovie.App"
         android:allowBackup="false"
         android:supportsRtl="true"
-        android:label="@string/AppName"
+        android:label="My Movie"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
