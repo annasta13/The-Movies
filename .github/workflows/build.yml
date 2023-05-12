@@ -46,8 +46,10 @@ jobs:
         name: unit_test_report
         path: app/build/reports/tests/testDebugUnitTest/
     - name: Upload test report
-      run: cat report.html
-      working-directory: robot/reports/tests/testDebugUnitTest/
+      uses: actions/upload-artifact@v2
+      with:
+        name: unit_test_report
+        path: shared/build/reports/tests/testDebugUnitTest/
         
   build-android-apk:
     needs: [ unit-test ]
@@ -71,6 +73,8 @@ jobs:
       - name: Build Android APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
-        run: cat android.applicationVariants.all { variant ->variant.outputs.all {outputFileName = "the singers-${variant.buildType.name}-${variant.versionName}.apk"}}
-        working-directory: robot/apk
+        uses: actions/upload-artifact@v2
+        with:
+          name: androidApp-debug.apk
+          path: app/build/outputs/apk/debug/androidApp-debug.apk
 

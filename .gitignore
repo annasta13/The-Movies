@@ -6,6 +6,8 @@
 shared/build/*
 !shared/build/reports
 /captures
+/androidApp/build*
+!androidApp/build/outputs/apk/debug
 .externalNativeBuild
 .cxx
 local.properties
