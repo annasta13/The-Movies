@@ -6,7 +6,7 @@ import timber.log.Timber
 
 /**
  * Created by Annas Surdyanto on 06/09/21.
- *
+ * App starting
  */
 @HiltAndroidApp
 class App : Application() {
