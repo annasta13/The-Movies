@@ -4,7 +4,9 @@
 .idea
 .DS_Store
 /build
-*/build
+/build
+shared/build/*
+!shared/build/reports
 /captures
 .externalNativeBuild
 .cxx
