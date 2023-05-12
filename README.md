@@ -1,7 +1,9 @@
 The-Movies: Clean Architecture Kotlin Multiplatform Mobile
 ==========
-[![build](https://github.com/annasta13/The-Movies/actions/workflows/gradle.yml/badge.svg)](https://github.com/annasta13/The-Movies/actions/workflows/gradle.yml)
+[![build](https://github.com/annasta13/The-Movies/actions/workflows/build.yml/badge.svg)](https://github.com/annasta13/The-Movies/actions/workflows/gradle.yml)
 [![GitHub license](https://img.shields.io/github/license/annasta13/The-Movies.svg?style=plastic)](https://github.com/annasta13/The-Movies/blob/main/LICENSE)
+<a href="https://developer.android.com/about/versions/marshmallow/android-6.0"><img alt="API" src="https://img.shields.io/badge/minSdkVersion-23-yellow.svg?style=true"/></a>
+<a href="https://developer.android.com/about/versions/12"><img alt="API" src="https://img.shields.io/badge/targetSdkVersion-31-green.svg?style=true"/></a>
 <p>What're inside?
 <br>- Jetpack Compose
 <br>- Hilt

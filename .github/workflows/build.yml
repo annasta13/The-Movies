@@ -15,9 +15,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -40,11 +38,6 @@ jobs:
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
       if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
-    - name: Upload test report
-      uses: actions/upload-artifact@v2
-      with:
-        name: unit_test_report
-        path: app/build/reports/tests/testDebugUnitTest/
     - name: Upload test report
       uses: actions/upload-artifact@v2
       with:
@@ -76,5 +69,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: androidApp-debug.apk
-          path: app/build/outputs/apk/debug/androidApp-debug.apk
+          path: androidApp/build/outputs/apk/debug/androidApp-debug.apk
 

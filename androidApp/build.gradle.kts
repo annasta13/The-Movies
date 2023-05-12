@@ -75,7 +75,7 @@ android {
     defaultConfig {
         applicationId = "com.habileducation.themovie.android"
         minSdk = 23
-        targetSdk = 30
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "com.habileducation.themovie.HiltTestRunner"
