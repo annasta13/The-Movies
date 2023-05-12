@@ -46,7 +46,7 @@ jobs:
         name: unit_test_report
         path: app/build/reports/tests/testDebugUnitTest/
     - name: Upload test report
-      uses: actions/upload-artifact@v2
+      run: cat report.html
       with:
         name: unit_test_report
         path: app/build/reports/tests/testDebugUnitTest/
@@ -73,7 +73,7 @@ jobs:
       - name: Build Android APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        run: cat android.applicationVariants.all { variant ->variant.outputs.all {outputFileName = "the singers-${variant.buildType.name}-${variant.versionName}.apk"}}
         with:
           name: android.applicationVariants.all { variant ->variant.outputs.all {outputFileName = "the singers-${variant.buildType.name}-${variant.versionName}.apk"}}
           path: app/build/outputs/apk/debug/debug-apk
